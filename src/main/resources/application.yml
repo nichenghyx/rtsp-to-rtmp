@@ -1,0 +1,18 @@
+server:
+  port: 6666
+  servlet:
+    context-path: /
+
+swagger:
+  package: com.hyx.rtmp.route.api
+  title: rtmp-to-rtsp
+  description: prod
+  termsOfServiceUrl: /
+  version: 1.0
+  enabled: true
+
+video:
+  timeOut: 20
+  checkPeriod: 20
+  server: 127.0.0.1:1935
+
