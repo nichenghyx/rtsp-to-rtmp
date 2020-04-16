@@ -1,11 +1,9 @@
 package com.hyx.rtmp.common.utils;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.dwzc.yongdinghe.common.constant.HttpConst;
+import com.hyx.rtmp.common.constant.HttpConst;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.domain.Page;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,12 +43,6 @@ public class ResponseUtils {
     }
 
     public static ResponseUtils getSuccessResponseJoData(Object data) {
-        if (data instanceof IPage){
-            return getSuccessResponseJoDataAndTotal(((IPage) data).getRecords(), ((IPage) data).getTotal());
-        }else if(data instanceof Page) {
-            return getSuccessResponseJoDataAndTotal(((Page) data).getContent(), ((Page) data).getTotalElements());
-        }
-
         return ResponseUtils.builder()
                 .data(data)
                 .status(HttpConst.SUCCESS)
