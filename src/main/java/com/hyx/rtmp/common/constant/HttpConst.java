@@ -1,9 +1,5 @@
 package com.hyx.rtmp.common.constant;
 
-/**
- * @author: pzy
- * @create: 2019/11/2 11:29
- */
 public interface HttpConst {
 
     /**

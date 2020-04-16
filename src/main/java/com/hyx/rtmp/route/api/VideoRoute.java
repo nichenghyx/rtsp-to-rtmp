@@ -30,7 +30,6 @@ public class VideoRoute {
      */
     @GetMapping("/start")
     @ApiOperation(value = "根据id播放视频", notes = "根据id播放视频", httpMethod = HttpConst.FINAL_METHOD_GET, produces = "application/json")
-    @ApiResponse(message = "", code = HttpConst.SUCCESS, response = Object.class)
     public ResponseUtils start(@RequestParam(name = "rtsp") String rtsp, @RequestParam(name = "rtmp") String rtmp){
         return videoService.start(rtsp, rtmp);
     }
@@ -41,7 +40,6 @@ public class VideoRoute {
      */
     @GetMapping("/last")
     @ApiOperation(value = "保持视频延时", notes = "保持视频延时", httpMethod = HttpConst.FINAL_METHOD_GET, produces = "application/json")
-    @ApiResponse(message = "", code = HttpConst.SUCCESS, response = Object.class)
     public ResponseUtils last(@RequestParam(name = "rtsp") String rtsp, @RequestParam(name = "rtmp") String rtmp) {
         videoService.last(rtsp, rtmp);
         return ResponseUtils.getSuccessResponseJo();
@@ -52,7 +50,6 @@ public class VideoRoute {
      */
     @GetMapping("/stop")
     @ApiOperation(value = "停止某个视频", notes = "停止某个视频", httpMethod = HttpConst.FINAL_METHOD_GET, produces = "application/json")
-    @ApiResponse(message = "", code = HttpConst.SUCCESS, response = Object.class)
     public void stop(@RequestParam(name = "rtsp") String rtsp) {
         if (StringUtils.isNotBlank(rtsp)) {
             VideoService.LIVE_VIDEO_MAP.remove(rtsp);

@@ -43,6 +43,8 @@ public class ResponseUtils {
     }
 
     public static ResponseUtils getSuccessResponseJoData(Object data) {
+
+
         return ResponseUtils.builder()
                 .data(data)
                 .status(HttpConst.SUCCESS)

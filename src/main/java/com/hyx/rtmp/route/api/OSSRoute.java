@@ -21,7 +21,6 @@ public class OSSRoute {
      */
     @GetMapping("/receive")
     @ApiOperation(value = "根据id播放视频", notes = "根据id播放视频", httpMethod = HttpConst.FINAL_METHOD_GET, produces = "application/json")
-    @ApiResponse(message = "", code = HttpConst.SUCCESS, response = Object.class)
     public void receive(
             @RequestParam(name = "object") String object,
             @RequestParam(name = "size") String size,
